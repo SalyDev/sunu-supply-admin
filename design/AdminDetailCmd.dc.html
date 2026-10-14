@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Détail commande — Sunu Supply Admin</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,800&amp;display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; background: #F5F0E3; }
+</style>
+</helmet>
+
+<div style="width:1280px;height:800px;display:flex;overflow:hidden;background:#F5F0E3;">
+
+  <!-- Sidebar -->
+  <div style="width:220px;background:#1F5E3B;display:flex;flex-direction:column;flex-shrink:0;">
+    <div style="padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 120 120" fill="none">
+          <circle cx="46" cy="52" r="20" fill="#E2553B"></circle>
+          <path d="M46 32 C44 26 48 22 53 22" stroke="#9BD36A" stroke-width="4" stroke-linecap="round"></path>
+          <path d="M70 58 C66 36 80 22 98 20 C100 40 90 56 70 58 Z" fill="#9BD36A"></path>
+          <path d="M12 60 H108 C108 88 86 106 60 106 C34 106 12 88 12 60 Z" fill="#F5F0E3"></path>
+          <path d="M28 76 H92" stroke="#1F5E3B" stroke-width="4" stroke-linecap="round"></path>
+        </svg>
+        <span style="font-family:'Fraunces',serif;font-weight:800;font-size:16px;color:#F5F0E3;letter-spacing:-0.02em;">Sunu Supply</span>
+      </div>
+    </div>
+    <nav style="padding:12px 0;flex:1;">
+      <!-- Dashboard -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        Dashboard
+      </div>
+      <!-- Commandes active -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;background:rgba(255,255,255,0.15);border-left:3px solid #9BD36A;color:white;font-size:14px;font-weight:600;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"></path><rect x="9" y="3" width="6" height="4" rx="1"></rect></svg>
+        Commandes
+      </div>
+      <!-- Catalogue -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+        Catalogue
+      </div>
+      <!-- Clients -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 00-3-3.87"></path><path d="M16 3.13a4 4 0 010 7.75"></path></svg>
+        Clients
+      </div>
+      <!-- Tendances -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        Tendances
+      </div>
+      <!-- Appro -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 001.97-1.67l1.38-7.34H6"></path></svg>
+        Approvisionnement
+      </div>
+      <!-- Prix -->
+      <div style="display:flex;align-items:center;gap:10px;padding:10px 20px;cursor:pointer;color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"></path></svg>
+        Suggestion prix
+      </div>
+    </nav>
+    <div style="padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:30px;height:30px;border-radius:15px;background:#9BD36A;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#1F5E3B;">S</div>
+        <div>
+          <div style="font-size:12px;font-weight:600;color:white;">Saly D.</div>
+          <div style="font-size:10px;color:rgba(255,255,255,0.5);">Administrateur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+
+    <!-- Top bar -->
+    <div style="background:white;border-bottom:1px solid #E5E0D4;padding:0 28px;height:56px;display:flex;align-items:center;gap:10px;flex-shrink:0;">
+      <div style="display:flex;align-items:center;gap:6px;cursor:pointer;color:#3F4F43;font-size:13px;font-weight:500;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+        Commandes
+      </div>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E5E0D4" stroke-width="2"><path d="M9 18l6-6-6-6"></path></svg>
+      <span style="font-size:13px;font-weight:600;color:#1F5E3B;">SS-0042</span>
+      <div style="margin-left:auto;display:flex;gap:8px;">
+        <div style="border:1.5px solid #E5E0D4;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:500;color:#3F4F43;cursor:pointer;display:flex;align-items:center;gap:6px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Imprimer
+        </div>
+        <div style="background:#1F5E3B;border-radius:8px;padding:7px 14px;font-size:13px;font-weight:600;color:white;cursor:pointer;display:flex;align-items:center;gap:6px;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.7 1.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.88 9.44a16 16 0 006.68 6.68l1.62-1.07a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+          Appeler client
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div style="flex:1;overflow-y:auto;padding:24px 28px;display:flex;gap:20px;">
+
+      <!-- Left column -->
+      <div style="flex:1;display:flex;flex-direction:column;gap:16px;">
+
+        <!-- Header card -->
+        <div style="background:white;border-radius:12px;padding:20px 24px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+            <div style="font-family:'Fraunces',serif;font-weight:800;font-size:22px;color:#16432B;letter-spacing:-0.01em;">Commande SS-0042</div>
+            <div style="background:#FFF3CD;color:#856404;border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;letter-spacing:0.04em;">EN ATTENTE</div>
+          </div>
+          <div style="font-size:13px;color:#3F4F43;">Passée le <strong>Lundi 7 oct. 2026 à 14h32</strong> · Livraison prévue <strong>Mercredi 15h–19h</strong></div>
+          <!-- Statut timeline -->
+          <div style="margin-top:16px;display:flex;align-items:center;gap:0;">
+            <!-- step 1 active -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:28px;height:28px;border-radius:14px;background:#1F5E3B;display:flex;align-items:center;justify-content:center;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <span style="font-size:10px;font-weight:600;color:#1F5E3B;white-space:nowrap;">Reçue</span>
+            </div>
+            <div style="flex:1;height:2px;background:#1F5E3B;margin-bottom:14px;"></div>
+            <!-- step 2 active -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:28px;height:28px;border-radius:14px;background:#FFF3CD;border:2px solid #FFC107;display:flex;align-items:center;justify-content:center;">
+                <div style="width:8px;height:8px;border-radius:4px;background:#FFC107;"></div>
+              </div>
+              <span style="font-size:10px;font-weight:600;color:#856404;white-space:nowrap;">En attente</span>
+            </div>
+            <div style="flex:1;height:2px;background:#E5E0D4;margin-bottom:14px;"></div>
+            <!-- step 3 -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:28px;height:28px;border-radius:14px;background:#F5F0E3;border:2px solid #E5E0D4;"></div>
+              <span style="font-size:10px;color:#3F4F43;white-space:nowrap;">Confirmée</span>
+            </div>
+            <div style="flex:1;height:2px;background:#E5E0D4;margin-bottom:14px;"></div>
+            <!-- step 4 -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:28px;height:28px;border-radius:14px;background:#F5F0E3;border:2px solid #E5E0D4;"></div>
+              <span style="font-size:10px;color:#3F4F43;white-space:nowrap;">En livraison</span>
+            </div>
+            <div style="flex:1;height:2px;background:#E5E0D4;margin-bottom:14px;"></div>
+            <!-- step 5 -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+              <div style="width:28px;height:28px;border-radius:14px;background:#F5F0E3;border:2px solid #E5E0D4;"></div>
+              <span style="font-size:10px;color:#3F4F43;white-space:nowrap;">Livrée</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles -->
+        <div style="background:white;border-radius:12px;padding:20px 24px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="font-family:'Fraunces',serif;font-weight:800;font-size:15px;color:#16432B;margin-bottom:14px;">Articles commandés</div>
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="border-bottom:1px solid #E5E0D4;">
+                <th style="text-align:left;font-size:11px;font-weight:600;color:#3F4F43;letter-spacing:0.08em;padding-bottom:8px;text-transform:uppercase;">Produit</th>
+                <th style="text-align:center;font-size:11px;font-weight:600;color:#3F4F43;letter-spacing:0.08em;padding-bottom:8px;text-transform:uppercase;">Qté</th>
+                <th style="text-align:right;font-size:11px;font-weight:600;color:#3F4F43;letter-spacing:0.08em;padding-bottom:8px;text-transform:uppercase;">P.U.</th>
+                <th style="text-align:right;font-size:11px;font-weight:600;color:#3F4F43;letter-spacing:0.08em;padding-bottom:8px;text-transform:uppercase;">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #F5F0E3;">
+                <td style="padding:10px 0;font-size:14px;color:#1A1A1A;display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#FFF3E0,#FFCCBC);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="24" rx="10" ry="11" fill="#F57C00"></ellipse><path d="M20 13 C19 8 22 5 25 5" stroke="#388E3C" stroke-width="2" stroke-linecap="round"></path></svg>
+                  </div>
+                  Carotte
+                </td>
+                <td style="padding:10px 0;text-align:center;font-size:14px;color:#1A1A1A;">1</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;color:#1A1A1A;">400 F</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;font-weight:600;color:#1A1A1A;">400 F</td>
+              </tr>
+              <tr style="border-bottom:1px solid #F5F0E3;">
+                <td style="padding:10px 0;font-size:14px;color:#1A1A1A;display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#FFEBEE,#FFCDD2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="22" r="12" fill="#E53935"></circle><path d="M20 10 C19 6 22 3 24 4" stroke="#388E3C" stroke-width="2" stroke-linecap="round"></path></svg>
+                  </div>
+                  Tomate
+                </td>
+                <td style="padding:10px 0;text-align:center;font-size:14px;color:#1A1A1A;">2</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;color:#1A1A1A;">600 F</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;font-weight:600;color:#1A1A1A;">1 200 F</td>
+              </tr>
+              <tr>
+                <td style="padding:10px 0;font-size:14px;color:#1A1A1A;display:flex;align-items:center;gap:10px;">
+                  <div style="width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,#FFF8E1,#FFE082);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="22" rx="12" ry="10" fill="#C8A96E"></ellipse><ellipse cx="20" cy="14" rx="6" ry="5" fill="#A1887F"></ellipse></svg>
+                  </div>
+                  Oignon
+                </td>
+                <td style="padding:10px 0;text-align:center;font-size:14px;color:#1A1A1A;">1</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;color:#1A1A1A;">800 F</td>
+                <td style="padding:10px 0;text-align:right;font-size:14px;font-weight:600;color:#1A1A1A;">800 F</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr style="border-top:1px solid #E5E0D4;">
+                <td colspan="3" style="padding:10px 0;font-size:13px;color:#3F4F43;">Livraison</td>
+                <td style="padding:10px 0;text-align:right;font-size:13px;color:#3F4F43;">2 000 F</td>
+              </tr>
+              <tr>
+                <td colspan="3" style="padding:6px 0;font-family:'Fraunces',serif;font-weight:800;font-size:15px;color:#16432B;">Total</td>
+                <td style="padding:6px 0;text-align:right;font-weight:700;font-size:16px;color:#1F5E3B;">4 400 F</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div style="margin-top:12px;padding:10px 14px;background:#F5F0E3;border-radius:8px;font-size:13px;color:#3F4F43;">
+            Paiement : <strong style="color:#1A1A1A;">Espèces à la livraison</strong>
+          </div>
+        </div>
+
+        <!-- Actions statut -->
+        <div style="background:white;border-radius:12px;padding:20px 24px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="font-family:'Fraunces',serif;font-weight:800;font-size:15px;color:#16432B;margin-bottom:14px;">Mettre à jour le statut</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <div style="border:1.5px solid #1F5E3B;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;color:#1F5E3B;cursor:pointer;background:#EFF5EF;">Confirmer ✓</div>
+            <div style="border:1.5px solid #0066CC;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;color:#0066CC;cursor:pointer;">En livraison 🛵</div>
+            <div style="border:1.5px solid #388E3C;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;color:#388E3C;cursor:pointer;">Livrée ✓✓</div>
+            <div style="border:1.5px solid #E2553B;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;color:#E2553B;cursor:pointer;">Annuler</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div style="width:280px;display:flex;flex-direction:column;gap:16px;flex-shrink:0;">
+
+        <!-- Infos client -->
+        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="font-family:'Fraunces',serif;font-weight:800;font-size:14px;color:#16432B;margin-bottom:14px;">Client</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid #E5E0D4;">
+            <div style="width:40px;height:40px;border-radius:20px;background:#D6E8CF;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#1F5E3B;flex-shrink:0;">F</div>
+            <div>
+              <div style="font-size:14px;font-weight:600;color:#1A1A1A;">Fatou Diallo</div>
+              <div style="font-size:12px;color:#3F4F43;">Cliente depuis mars 2026</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F5E3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.8 12a19.79 19.79 0 01-3.07-8.67A2 2 0 012.7 1.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.88 9.44a16 16 0 006.68 6.68l1.62-1.07a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path></svg>
+              <span style="font-size:13px;color:#1A1A1A;">77 123 45 67</span>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:8px;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1F5E3B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:1px;flex-shrink:0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <div>
+                <div style="font-size:13px;color:#1A1A1A;">Rue 10, Villa 42</div>
+                <div style="font-size:12px;color:#3F4F43;">Thiaroye, Dakar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note livraison -->
+        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="font-family:'Fraunces',serif;font-weight:800;font-size:14px;color:#16432B;margin-bottom:10px;">Note de livraison</div>
+          <div style="padding:10px 12px;background:#FFF8E1;border-radius:8px;font-size:13px;color:#3F4F43;line-height:1.5;">
+            "Portail bleu en face de la mosquée"
+          </div>
+        </div>
+
+        <!-- Historique client -->
+        <div style="background:white;border-radius:12px;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06),0 0 0 1px rgba(0,0,0,0.04);">
+          <div style="font-family:'Fraunces',serif;font-weight:800;font-size:14px;color:#16432B;margin-bottom:14px;">Historique de Fatou</div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:12px;color:#3F4F43;">Commandes totales</span>
+            <span style="font-size:13px;font-weight:600;color:#1A1A1A;">8</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+            <span style="font-size:12px;color:#3F4F43;">CA total</span>
+            <span style="font-size:13px;font-weight:600;color:#1A1A1A;">32 500 F</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:12px;color:#3F4F43;">Dernière commande</span>
+            <span style="font-size:13px;font-weight:600;color:#1A1A1A;">il y a 12 jours</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

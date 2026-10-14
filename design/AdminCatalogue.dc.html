@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Catalogue — Sunu Supply</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,800&amp;display=swap" rel="stylesheet">
+<style>* { box-sizing: border-box; } body { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; background: #F5F0E3; }</style>
+</helmet>
+
+<div style="width:1280px;height:800px;display:flex;overflow:hidden;background:#F5F0E3;">
+
+  <!-- Sidebar -->
+  <div style="width:220px;background:#1F5E3B;display:flex;flex-direction:column;flex-shrink:0;">
+    <div style="padding:24px 20px 20px;border-bottom:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <svg width="28" height="28" viewBox="0 0 120 120" fill="none"><circle cx="46" cy="52" r="20" fill="#E2553B"></circle><path d="M46 32 C44 26 48 22 53 22" stroke="#9BD36A" stroke-width="4" stroke-linecap="round"></path><path d="M70 58 C66 36 80 22 98 20 C100 40 90 56 70 58 Z" fill="#9BD36A"></path><path d="M12 60 H108 C108 88 86 106 60 106 C34 106 12 88 12 60 Z" fill="#F5F0E3"></path></svg>
+        <div><div style="font-family:'Fraunces',serif;font-weight:800;font-size:14px;color:#fff;line-height:1.1;">Sunu Supply</div><div style="font-size:10px;color:rgba(255,255,255,0.6);">Administration</div></div>
+      </div>
+    </div>
+    <nav style="padding:12px 0;flex:1;">
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">📊 Dashboard</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">📦 Commandes</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;background:rgba(255,255,255,0.15);border-left:3px solid #9BD36A;">🥬 Catalogue</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">👥 Clients</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">🛒 Achats marché</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">📈 Tendances</div>
+      <div style="padding:10px 20px;color:rgba(255,255,255,0.7);font-size:13px;">💰 Prix</div>
+    </nav>
+    <div style="padding:16px 20px;border-top:1px solid rgba(255,255,255,0.1);">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="width:32px;height:32px;border-radius:50%;background:#9BD36A;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#1F5E3B;">S</div>
+        <div><div style="font-size:12px;color:#fff;font-weight:500;">Saly</div><div style="font-size:10px;color:rgba(255,255,255,0.5);">Admin</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+
+    <!-- Top bar -->
+    <div style="padding:18px 28px;background:#fff;border-bottom:1px solid #E8E3D6;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="font-family:'Fraunces',serif;font-weight:800;font-size:20px;color:#16432B;">Catalogue</span>
+        <span style="background:#E8F5E0;color:#1F5E3B;font-size:12px;font-weight:600;padding:4px 10px;border-radius:20px;">6 produits</span>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center;">
+        <div style="display:flex;align-items:center;gap:8px;background:#F5F0E3;border-radius:8px;padding:8px 14px;">
+          <svg width="14" height="14" fill="none" stroke="#3F4F43" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+          <span style="font-size:13px;color:#9BA8A3;">Rechercher…</span>
+        </div>
+        <button style="background:#1F5E3B;color:#fff;border:none;border-radius:8px;padding:8px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Bricolage Grotesque',sans-serif;">+ Nouveau produit</button>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div style="padding:10px 28px;background:#FFFDF7;border-bottom:1px solid #F0EBE0;display:flex;gap:20px;align-items:center;">
+      <span style="font-size:11px;color:#3F4F43;font-weight:600;">Légende :</span>
+      <span style="font-size:11px;color:#3F4F43;">📋 <b>Prix marché</b> = estimation recueillie avant le jour J</span>
+      <span style="font-size:11px;color:#3F4F43;">🏷️ <b>Prix de vente</b> = affiché sur le site</span>
+      <span style="font-size:11px;color:#3F4F43;">🛒 <b>Prix d'achat</b> = réel le jour J (si vide = prix marché)</span>
+      <span style="font-size:11px;color:#3F4F43;">💰 <b>Marge/kg</b> = vente − achat</span>
+    </div>
+
+    <!-- Table -->
+    <div style="flex:1;overflow-y:auto;padding:20px 28px;">
+      <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <table style="width:100%;border-collapse:collapse;">
+          <thead>
+            <tr style="background:#F5F0E3;">
+              <th style="text-align:left;padding:11px 20px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;width:200px;">Produit</th>
+              <th style="text-align:left;padding:11px 14px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;">Catégorie</th>
+              <th style="text-align:right;padding:11px 14px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;">📋 Prix marché</th>
+              <th style="text-align:right;padding:11px 14px;font-size:11px;font-weight:600;color:#16432B;text-transform:uppercase;letter-spacing:0.5px;">🏷️ Prix vente</th>
+              <th style="text-align:right;padding:11px 14px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;">🛒 Prix d'achat</th>
+              <th style="text-align:center;padding:11px 14px;font-size:11px;font-weight:600;color:#1F5E3B;text-transform:uppercase;letter-spacing:0.5px;">💰 Marge/kg</th>
+              <th style="text-align:center;padding:11px 14px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;">Actif</th>
+              <th style="text-align:center;padding:11px 14px;font-size:11px;font-weight:600;color:#3F4F43;text-transform:uppercase;letter-spacing:0.5px;">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Carotte: marché=700, vente=1200, achat=700 (=marché), marge=500 -->
+            <tr style="border-top:1px solid #F0EBE0;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#FFF3E0;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="26" rx="8" ry="11" fill="#F97316"></ellipse><path d="M20 15 C18 8 14 6 12 8" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"></path><path d="M20 15 C20 8 22 5 24 6" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"></path></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Carotte</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#FFF3E0;color:#E65100;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Racines</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">700 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">1 200 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">700 CFA <span style="font-size:10px;background:#E8F5E0;color:#1F5E3B;padding:1px 5px;border-radius:4px;margin-left:4px;">= marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+500 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+            <!-- Tomate: marché=550, vente=800, achat=600 (saisi, > marché), marge=200 -->
+            <tr style="border-top:1px solid #F0EBE0;background:#FAFAF8;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#FEE2E2;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="23" r="13" fill="#EF4444"></circle><path d="M20 10 C18 4 22 2 24 4" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"></path></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Tomate</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#FEE2E2;color:#B91C1C;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Légumes-fruits</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">550 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">800 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#E2553B;font-weight:600;">600 CFA <span style="font-size:10px;background:#FEE2E2;color:#B91C1C;padding:1px 5px;border-radius:4px;margin-left:4px;">↑ marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+200 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+            <!-- Oignon: marché=380, vente=600, achat=380, marge=220 -->
+            <tr style="border-top:1px solid #F0EBE0;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#FEF3C7;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="24" rx="11" ry="12" fill="#D97706"></ellipse><path d="M20 12 C20 6 22 4 22 4" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round"></path></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Oignon</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#FEF3C7;color:#92400E;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Aromates</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">380 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">600 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">380 CFA <span style="font-size:10px;background:#E8F5E0;color:#1F5E3B;padding:1px 5px;border-radius:4px;margin-left:4px;">= marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+220 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+            <!-- Laitue: marché=300, vente=500, achat=300, marge=200 -->
+            <tr style="border-top:1px solid #F0EBE0;background:#FAFAF8;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#DCFCE7;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="22" rx="14" ry="10" fill="#22C55E"></ellipse><ellipse cx="20" cy="22" rx="9" ry="6" fill="#4ADE80"></ellipse></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Laitue</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#DCFCE7;color:#15803D;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Légumes-feuilles</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">300 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">500 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">300 CFA <span style="font-size:10px;background:#E8F5E0;color:#1F5E3B;padding:1px 5px;border-radius:4px;margin-left:4px;">= marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+200 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+            <!-- Gombo: marché=650, vente=1000, achat=650, marge=350 -->
+            <tr style="border-top:1px solid #F0EBE0;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#DCFCE7;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><ellipse cx="20" cy="22" rx="5" ry="13" fill="#16A34A" transform="rotate(-10,20,22)"></ellipse><path d="M20 9 C16 6 14 8 15 11" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round"></path></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Gombo</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#DCFCE7;color:#15803D;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Légumes-fruits</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">650 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">1 000 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">650 CFA <span style="font-size:10px;background:#E8F5E0;color:#1F5E3B;padding:1px 5px;border-radius:4px;margin-left:4px;">= marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+350 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+            <!-- Piment: marché=900, vente=1500, achat non saisi → =marché, marge=600 -->
+            <tr style="border-top:1px solid #F0EBE0;background:#FAFAF8;">
+              <td style="padding:13px 20px;"><div style="display:flex;align-items:center;gap:10px;"><div style="width:32px;height:32px;border-radius:8px;background:#FEE2E2;display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><path d="M20 10 C22 16 24 20 22 28 C20 32 18 32 16 28 C14 22 16 16 20 10 Z" fill="#DC2626"></path><path d="M20 10 C22 6 26 6 24 10" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"></path></svg></div><span style="font-weight:600;font-size:14px;color:#16432B;">Piment</span></div></td>
+              <td style="padding:13px 14px;"><span style="background:#FEE2E2;color:#B91C1C;font-size:12px;font-weight:500;padding:3px 10px;border-radius:20px;">Aromates</span></td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">900 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-weight:700;font-size:14px;color:#16432B;">1 500 CFA</td>
+              <td style="padding:13px 14px;text-align:right;font-size:13px;color:#6B7280;">900 CFA <span style="font-size:10px;background:#E8F5E0;color:#1F5E3B;padding:1px 5px;border-radius:4px;margin-left:4px;">= marché</span></td>
+              <td style="padding:13px 14px;text-align:center;"><span style="font-weight:800;font-size:14px;color:#1F5E3B;">+600 CFA</span></td>
+              <td style="padding:13px 14px;text-align:center;"><div style="width:34px;height:19px;border-radius:10px;background:#9BD36A;margin:0 auto;position:relative;"><div style="width:15px;height:15px;border-radius:50%;background:#fff;position:absolute;right:2px;top:2px;box-shadow:0 1px 2px rgba(0,0,0,0.2);"></div></div></td>
+              <td style="padding:13px 14px;text-align:center;"><button style="border:1px solid #E8E3D6;background:#fff;border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;color:#3F4F43;font-family:'Bricolage Grotesque',sans-serif;">✏️ Modifier</button></td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add form -->
+      <div style="background:#fff;border-radius:12px;padding:18px 20px;margin-top:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06);">
+        <div style="font-weight:700;font-size:13px;color:#16432B;margin-bottom:14px;">+ Ajouter un produit</div>
+        <div style="display:grid;grid-template-columns:1fr 140px 110px 110px 110px 80px auto;gap:10px;align-items:end;">
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#3F4F43;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">Nom</div>
+            <input type="text" placeholder="ex. Aubergine" style="width:100%;border:1px solid #E8E3D6;border-radius:8px;padding:8px 12px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;outline:none;">
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#3F4F43;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">Catégorie</div>
+            <select style="width:100%;border:1px solid #E8E3D6;border-radius:8px;padding:8px 10px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;background:#fff;outline:none;">
+              <option>Légumes-feuilles</option><option>Légumes-fruits</option><option>Racines</option><option>Aromates</option>
+            </select>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#3F4F43;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">📋 Prix marché</div>
+            <input type="text" placeholder="CFA/kg" style="width:100%;border:1px solid #E8E3D6;border-radius:8px;padding:8px 10px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;outline:none;">
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#16432B;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">🏷️ Prix vente</div>
+            <input type="text" placeholder="CFA/kg" style="width:100%;border:1px solid #9BD36A;border-radius:8px;padding:8px 10px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;outline:none;">
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#3F4F43;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">🛒 Prix achat</div>
+            <input type="text" placeholder="optionnel" style="width:100%;border:1px solid #E8E3D6;border-radius:8px;padding:8px 10px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;outline:none;background:#FAFAFA;">
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:600;color:#3F4F43;margin-bottom:4px;text-transform:uppercase;letter-spacing:0.4px;">Unité</div>
+            <select style="width:100%;border:1px solid #E8E3D6;border-radius:8px;padding:8px 8px;font-size:13px;font-family:'Bricolage Grotesque',sans-serif;color:#3F4F43;background:#fff;outline:none;">
+              <option>kg</option><option>botte</option><option>pièce</option>
+            </select>
+          </div>
+          <button style="background:#1F5E3B;color:#fff;border:none;border-radius:8px;padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;font-family:'Bricolage Grotesque',sans-serif;">Ajouter</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  $preview = { width: 1280, height: 800 };
+}
+</script>
+</x-dc>
+</body>
+</html>
