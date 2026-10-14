@@ -53,11 +53,12 @@ export default function Appro() {
               <div style={{ fontWeight: 700, fontSize: 14, color: 'var(--green-dark)' }}>🛒 Liste d'achats du jour</div>
               <span className="badge pill b-neutral" style={{ fontWeight: 400 }}>Agrégé depuis les commandes</span>
             </div>
+            <div className="table-wrap">
             <table className="table">
               <thead>
                 <tr>
                   <th>Produit</th>
-                  <th className="c">À acheter <span style={{ fontSize: 9, color: '#9B9B9B', textTransform: 'none', fontWeight: 400 }}>(+10% inclus)</span></th>
+                  <th className="c">À acheter<div style={{ fontSize: 9, color: '#9B9B9B', textTransform: 'none', fontWeight: 400, letterSpacing: 0 }}>(+10% inclus)</div></th>
                   <th className="r">📋 Prix marché</th>
                   <th className="r">Budget estimé</th>
                   <th className="r">🏷️ Prix vente</th>
@@ -67,7 +68,7 @@ export default function Appro() {
               <tbody>
                 {rows.map((r, i) => (
                   <tr key={r.product} style={{ background: i % 2 ? '#FAFAF8' : undefined }}>
-                    <td className="product-name">{r.p.emoji} {r.p.name}</td>
+                    <td className="product-name" style={{ whiteSpace: 'nowrap' }}>{r.p.emoji} {r.p.name}</td>
                     <td className="c" style={{ fontWeight: 700, fontSize: 14, color: 'var(--green-dark)' }}>{kg(r.qty)}</td>
                     <td className="r" style={{ color: 'var(--muted)' }}>{fmt(r.p.market)} CFA/kg</td>
                     <td className="r strong">{CFA(r.budget)}</td>
@@ -87,6 +88,7 @@ export default function Appro() {
                 </tr>
               </tfoot>
             </table>
+            </div>
             <div style={{ padding: '8px 16px', fontSize: 11, color: '#9B9B9B', borderTop: '1px solid var(--line-soft)' }}>
               * Quantités incluent +10% pour pertes éventuelles ou commandes de dernière minute. Marge estimée sur la base du prix marché (avant achat réel).
             </div>
